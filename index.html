@@ -36,7 +36,7 @@ function renderHomework(){
  const dayTitle=dayDate.toLocaleDateString('ro-RO',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
  if(dayIndex<0||dayIndex>=5){target.innerHTML=`<h2 style="margin:14px 0">${escHomework(dayTitle)}</h2><p class="muted">Nu sunt lecții programate pentru această zi.</p>`;return;}
  const vacation=holidays.find(h=>date>=h.start&&date<=h.end);
- if(vac){target.innerHTML=`<h2 style="margin:14px 0">${escHomework(dayTitle)}</h2><p class="muted">${escHomework(vacation.name)} – nu sunt lecții programate.</p>`;return;}
+ if(vacatin){target.innerHTML=`<h2 style="margin:14px 0">${escHomework(dayTitle)}</h2><p class="muted">${escHomework(vacation.name)} – nu sunt lecții programate.</p>`;return;}
  const entries=homeworkCache.filter(x=>x.data===date);
  const bySubject=new Map(entries.map(x=>[homeworkSubjectKey(x.disciplina),x]));
  const lines=schedule[dayIndex].map((subject,i)=>{
